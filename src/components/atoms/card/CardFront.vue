@@ -2,6 +2,7 @@
 import AppIcon from "../AppIcon.vue";
 import { PropType } from "vue";
 
+// TODO add three more types of cards (in the next version)
 type TIcons = "clubs";
 
 defineProps({
