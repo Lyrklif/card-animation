@@ -8,13 +8,22 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  back: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
 <template>
   <div class="card" :class="{ flip: flip }">
-    <CardFront text="12" icon="clubs" class="side side-front" />
-    <CardBack class="side side-back" />
+    <CardFront
+      text="12"
+      icon="clubs"
+      class="side side-front"
+      :class="back ? 'hide' : 'show'"
+    />
+    <CardBack class="side side-back" :class="back ? 'show' : 'hide'" />
   </div>
 </template>
 
@@ -25,6 +34,7 @@ defineProps({
 .card {
   position: relative;
   perspective: 1000px;
+  user-select: none;
 
   width: 118px;
   height: 178px;
@@ -45,20 +55,17 @@ defineProps({
   transition: ease-in-out 600ms;
 }
 
-.side-front {
-  .card:hover & {
+.show {
+  .flip & {
     transform: rotateY(180deg);
   }
 }
 
-.side-back {
+.hide {
   transform: rotateY(-180deg);
 
-  .card:hover & {
+  .flip & {
     transform: rotateY(0deg);
   }
-}
-
-.flip {
 }
 </style>
