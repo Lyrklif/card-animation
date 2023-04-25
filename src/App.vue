@@ -4,6 +4,7 @@ import Card from "./components/atoms/card/Card.vue";
 
 <template>
   <Card />
+  <Card flip />
 </template>
 
 <style scoped lang="scss"></style>
