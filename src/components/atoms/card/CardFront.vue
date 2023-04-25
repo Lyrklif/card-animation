@@ -26,15 +26,20 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-@import "../../../assets/styles/variables";
+@import "../../../assets/styles/breakpoints";
 
 .front {
-  background-color: $white;
+  background-color: #ffffff;
   height: 100%;
   width: 100%;
-  padding: 10px 23px;
-  border-radius: $border-radius;
+  padding: 10px 4px;
+  border-radius: var(--border-radius);
   overflow: hidden;
+
+  @include md-up {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
 }
 
 .head {
@@ -42,16 +47,29 @@ defineProps({
   flex-direction: column;
   align-items: center;
   max-width: 50px;
+
+  @include md-up {
+    max-width: 30px;
+  }
 }
 
 .text {
   font-weight: 600;
-  font-size: 48px;
-  line-height: 58px;
+  font-size: 30px;
+  line-height: 1.2em;
+
+  @include md-up {
+    font-size: 48px;
+  }
 }
 
 .icon {
-  height: 47px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
+
+  @include md-up {
+    height: 47px;
+    width: 50px;
+  }
 }
 </style>

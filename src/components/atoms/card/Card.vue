@@ -39,21 +39,14 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-@import "../../../assets/styles/variables";
 @import "../../../assets/styles/breakpoints";
 
 .card {
   position: relative;
   perspective: 1000px;
   user-select: none;
-
-  width: 118px;
-  height: 178px;
-
-  @include md-up {
-    width: 185px;
-    height: 276px;
-  }
+  width: inherit;
+  height: inherit;
 }
 
 .side {

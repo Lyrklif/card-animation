@@ -1,5 +1,6 @@
 @import "fonts";
 @import "variables";
+@import "breakpoints";
 
 html {
   box-sizing: border-box;
@@ -13,3 +14,28 @@ body {
   background-color: #1E1E1E;
 }
 
+
+:root {
+  --card-height: 178px;
+  --card-width: 118px;
+  --card-height-min: 105px;
+  --card-width-min: 70px;
+  --offsetsY: 40px;
+  --offsetsX: 16px;
+  --border-radius: 10px;
+
+  @include sm-up {
+    --card-height-min: 135px;
+    --card-width-min: 90px;
+  }
+
+  @include md-up {
+    --card-height: 277px;
+    --card-width: 185px;
+    --card-height-min: 277px;
+    --card-width-min: 185px;
+    --offsetsY: 50px;
+    --offsetsX: 20px;
+    --border-radius: 20px;
+  }
+}

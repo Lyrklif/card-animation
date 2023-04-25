@@ -5,36 +5,35 @@ import { ref } from "vue";
 
 const startPlay = ref<boolean>(false);
 const play = () => {
-  startPlay.value = !startPlay.value;
+  startPlay.value = true;
 };
 </script>
 
 <template>
   <div class="game">
-    <PlayButton class="button" @click="play" />
+    <PlayButton class="button" @click.once="play" />
 
     <div class="grid">
-      <Card />
+      <Card class="card full-size-card" />
 
       <div class="bottom-wrap">
-        <Card back class="card-bottom left" />
+        <Card back class="card card-bottom left" />
         <Card
           back
           text="A"
           :flip="startPlay"
           :shadow="startPlay"
-          :class="{ top: startPlay }"
-          class="card-bottom center"
+          :class="[startPlay ? 'top full-size-card' : '']"
+          class="card card-bottom center"
         />
-        <Card back class="card-bottom right" />
+        <Card back class="card card-bottom right" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-$card-height: 277px;
-$offsets: 50px;
+@import "../../assets/styles/breakpoints";
 
 .game {
   margin: 30px auto;
@@ -52,8 +51,8 @@ $offsets: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 600px;
-  height: $card-height + $card-height + $offsets;
+  max-width: calc((var(--card-width-min) * 3) + (var(--offsetsX) * 2));
+  height: calc(var(--card-height) + var(--card-height-min) + var(--offsetsY));
 }
 
 .bottom-wrap {
@@ -62,7 +61,9 @@ $offsets: 50px;
 
 .card-bottom {
   position: absolute;
-  top: $card-height + $offsets;
+  width: var(--card-width-min);
+  height: var(--card-height-min);
+  top: calc(var(--card-height) + var(--offsetsY));
   transition: all 0.6s ease;
   z-index: 1;
 
@@ -78,19 +79,26 @@ $offsets: 50px;
   }
 }
 
+.full-size-card {
+  width: var(--card-width);
+  height: var(--card-height);
+}
+
 .top {
   position: absolute;
   top: -10px;
   animation: to-top 1s;
   z-index: 2;
+  scale: 1.02;
+  transform-origin: 0%;
 }
 
 @keyframes to-top {
   0% {
-    top: $card-height + $offsets;
+    top: calc(var(--card-height) + var(--offsetsY));
   }
   60% {
-    top: $card-height + $offsets;
+    top: calc(var(--card-height) + var(--offsetsY));
   }
   100% {
     top: -10px;

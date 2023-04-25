@@ -11,22 +11,26 @@ import AppIcon from "../AppIcon.vue";
 </template>
 
 <style lang="scss" scoped>
-@import "../../../assets/styles/variables";
+@import "../../../assets/styles/breakpoints";
 
 .back {
   height: 100%;
   width: 100%;
   padding: 6px 8px;
   background-color: #565762;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   overflow: hidden;
 
   &__inner {
     background-color: rgba(#000000, 0.1);
-    border-radius: 14px;
+    border-radius: 6px;
     overflow: hidden;
     height: 100%;
     width: 100%;
+
+    @include md-up {
+      border-radius: 14px;
+    }
   }
 
   &__pattern {
