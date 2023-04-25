@@ -64,7 +64,7 @@ const play = () => {
   width: var(--card-width-min);
   height: var(--card-height-min);
   top: calc(var(--card-height) + var(--offsetsY));
-  transition: all 0.6s ease;
+  transition: height 0.9s ease, width 0.9s ease, top 0.3s ease, scale 0.8s ease;
   z-index: 1;
 
   &.left {
@@ -97,7 +97,7 @@ const play = () => {
   0% {
     top: calc(var(--card-height) + var(--offsetsY));
   }
-  60% {
+  40% {
     top: calc(var(--card-height) + var(--offsetsY));
   }
   100% {
