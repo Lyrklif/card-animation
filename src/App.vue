@@ -1,12 +1,9 @@
 <script setup lang="ts">
-
+import Card from "./components/atoms/card/Card.vue";
 </script>
 
 <template>
-  <div>
-    TODO
-  </div>
+  <Card />
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

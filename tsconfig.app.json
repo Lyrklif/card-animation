@@ -10,7 +10,7 @@
   ],
   "compilerOptions": {
     "composite": true,
-    "baseUrl": "./eclipse-currency-converter",
+    "baseUrl": "./card-animation",
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]

@@ -4,7 +4,6 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,5 +12,5 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), "src/assets/svg-sprite")],
     }),
     ViteMinifyPlugin({}),
-  ]
+  ],
 });
