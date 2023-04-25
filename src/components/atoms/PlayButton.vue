@@ -13,8 +13,8 @@
   background: linear-gradient(180deg, #4457ff 0%, #3c4de1 100%);
   border: 1px solid #4456fe;
   border-radius: 12px;
-  min-height: 50px;
-  min-width: 200px;
+  min-height: 40px;
+  min-width: 120px;
   cursor: pointer;
   transition: opacity 0.3s ease;
 

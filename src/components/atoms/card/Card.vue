@@ -12,18 +12,29 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: Boolean,
+    default: false,
+  },
+  text: {
+    type: String,
+    default: "12",
+  },
 });
 </script>
 
 <template>
   <div class="card" :class="{ flip: flip }">
     <CardFront
-      text="12"
+      :text="text"
       icon="clubs"
       class="side side-front"
-      :class="back ? 'hide' : 'show'"
+      :class="[back ? 'hide' : 'show', shadow ? 'shadow' : '']"
     />
-    <CardBack class="side side-back" :class="back ? 'show' : 'hide'" />
+    <CardBack
+      class="side side-back"
+      :class="[back ? 'show' : 'hide', shadow ? 'shadow' : '']"
+    />
   </div>
 </template>
 
@@ -53,6 +64,10 @@ defineProps({
   backface-visibility: hidden;
   transform-style: preserve-3d;
   transition: ease-in-out 600ms;
+
+  &.shadow {
+    box-shadow: 0px 8px 8px -2px rgba(34, 60, 80, 0.3);
+  }
 }
 
 .show {
