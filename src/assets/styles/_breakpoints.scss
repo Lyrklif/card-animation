@@ -1,33 +1,15 @@
 $grid-breakpoints-sm: 576px;
 $grid-breakpoints-md: 768px;
-$grid-breakpoints-lg: 992px;
-$grid-breakpoints-xl: 1280px;
 
-
-// @template: @include sm-up {}
 @mixin sm-up {
   @media (min-width: $grid-breakpoints-sm) {
     @content;
   }
 }
 
-// @template: @include md-up {}
 @mixin md-up {
   @media (min-width: $grid-breakpoints-md) {
     @content;
   }
 }
 
-// @template: @include lg-up {}
-@mixin lg-up {
-  @media (min-width: $grid-breakpoints-lg) {
-    @content;
-  }
-}
-
-// @template: @include xl-up {}
-@mixin xl-up {
-  @media (min-width: $grid-breakpoints-xl) {
-    @content;
-  }
-}
